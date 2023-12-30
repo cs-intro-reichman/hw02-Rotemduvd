@@ -9,21 +9,55 @@ import java.util.Random;
  */
 public class OneOfEachStats {
 	public static void main (String[] args) {
-		// Gets the two command-line arguments
 		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
-		// Initailizes a random numbers generator with the given seed value
-        Random generator = new Random(seed);  
-		
-		//// In the previous version of this program, you used a statement like:
-		//// double rnd = Math.random();
-		//// Where "rnd" is the variable that stores the generated random value.
-		//// In this version of the program, replace this statement with:
-		//// double rnd = generator.nextDouble();
-		//// This statement will generate a random value in the range [0,1),
-		//// just like you had in the previous version, except that the 
-		//// randomization will be based on the given seed.
-		//// This is the only change that you have to do in the program.
-		    
-	}
+        int count;
+        int gen;
+        int ngen;
+        int countT = 0;
+        int counttwo = 0;
+        int countthree = 0;
+        int countfour = 0;
+
+        // Set a fixed seed to make random numbers predictable
+        Random generetor = new Random(seed);
+
+        for (int rep = T; rep > 0; rep--) {
+            count = 1;
+            gen = generetor.nextInt(2);
+            ngen = gen;
+
+            while (gen == ngen) {
+                ngen = generetor.nextInt(2);
+                count++;
+            }
+
+            if (count == 2) {
+                counttwo++;
+            } else if (count == 3) {
+                countthree++;
+            } else {
+                countfour++;
+            }
+            countT += count;
+           
+        } 
+        double avg = ((double) countT) / T;
+        System.out.println("Average: " + avg + " children to get at least one of each gender.");
+        System.out.println("number of families with 2 children: " + counttwo);
+        System.out.println("number of families with 3 children:  " + countthree);
+        System.out.println("number of families with 4 or more children:  " + countfour);
+
+        int common = Math.max(Math.max(counttwo, countthree), countfour);
+        String commonstr;
+
+        if (common == counttwo) {
+            commonstr = "2";
+        } else if (common == countthree) {
+            commonstr = "3";
+        } else {
+            commonstr = "4 or more";
+        }
+        System.out.println("The most common number of children is " + commonstr);
+    }
 }

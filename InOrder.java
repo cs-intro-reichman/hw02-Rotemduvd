@@ -4,6 +4,21 @@
  */
 public class InOrder {
 	public static void main (String[] args) {
-		//// Write your code here
-	}
+		 int  i = (int)(10 * Math.random());
+         System.out.println();
+         int newnum;
+
+         do{
+          System.out.print(i + " ");
+          newnum = (int)(10 * Math.random());
+          if (newnum >= i){
+             i = newnum;
+          }
+
+        }while(newnum >= i);
+            
+   }
+		
+       
 }
+	
