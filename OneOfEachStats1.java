@@ -49,8 +49,8 @@ public class OneOfEachStats1 {
 		double avg = ((double)(countT)/(double)(T));
 		System.out.println("Average: " + avg + " children to get at least one of each gender.");
 		System.out.println("number of families with 2 children: " + counttwo);
-		System.out.println("number of families with 3 children:  " + countthree);
-		System.out.println("number of families with 4 or more children:  " + countfour);
+		System.out.println("number of families with 3 children: " + countthree);
+		System.out.println("number of families with 4 or more children: " + countfour);
 
 		int common = Math.max(Math.max(counttwo,countthree),countfour);
 		String commonstr;

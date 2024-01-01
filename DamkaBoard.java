@@ -6,7 +6,7 @@ public class DamkaBoard {
 		
 		for (int i = 1;i <= n; i++) { //prints number of rows until n
 			
-			for (int j = 1;j < n; j++){ // prints the row until j=n
+			for (int j = 1;j <= n; j++){ // prints the row until j=n
 				if(i % 2 == 0){
 					System.out.print(" *");
 				}else {
@@ -14,7 +14,8 @@ public class DamkaBoard {
 				} 
 		 
 			
-			} System.out.println();
+			} 
+			System.out.println();
 
 
 		}
