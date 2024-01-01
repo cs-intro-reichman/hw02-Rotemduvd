@@ -59,6 +59,6 @@ public class OneOfEachStats {
         } else {
             commonstr = "4 or more";
         }
-        System.out.println("The most common number of children is " + commonstr);
+        System.out.println("The most common number of children is " + commonstr + ".");
     }
 }
