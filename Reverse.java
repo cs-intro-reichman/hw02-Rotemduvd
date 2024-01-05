@@ -15,6 +15,7 @@ public class Reverse {
 			sOut = sOut + c;
 			i = (i - 1);
 		}
+		// Again same as Divisors and Perfect
 		System.out.println(sOut);
 		System.out.println("The middle character is " + s.charAt(m));
 
