@@ -12,6 +12,7 @@ public class Perfect {
 				sum = sum + (N / d);
 			}d = d - 1;
 		}
+		/* Same as Divisors comment */
 
 		if (sum == N){
 			System.out.println(s);
